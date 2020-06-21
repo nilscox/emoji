@@ -18,7 +18,7 @@ jobs:
         node-version: '12'
 
     - name: builld
-      run: yarn && yarn build
+      run: yarn && yarn build --public-url '/emoji'
 
     - name: commit
       run: |
