@@ -1,0 +1,31 @@
+name: build
+
+on: [push]
+
+jobs:
+
+  build:
+
+    name: build emojis
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - uses: actions/checkout@v1
+
+    - uses: actions/setup-node@v2-beta
+      with:
+        node-version: '12'
+
+    - name: builld
+      run: yarn && yarn build
+
+    - name: commit
+      run: |
+        git config --global user.email "action@github.com"
+        git config --global user.name "Github Action"
+        git add --force dist
+        git commit -m 'automated build for github pages'
+
+    - name: push
+      run: git push "https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git" $(git subtree split --prefix dist):gh-pages --force
