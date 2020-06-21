@@ -1,0 +1,11 @@
+/* https://www.google.com/get/noto */
+
+@font-face {
+  font-family: 'Noto Emoji';
+  src: url('../fonts/NotoEmoji-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Noto Color Emoji';
+  src: url('../fonts/NotoColorEmoji.ttf');
+}

@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+}
+
+html, body, #app {
+  min-height: 100%;
+}
+
+body {
+  font-family: monospace;
+  background-color: black;
+  color: #CCC;
+}
+
+input.form-control, input.form-control:focus {
+  background-color: #333;
+  border-color: #666;
+  box-shadow: none;
+  color: #CCC;
+}
+
+.emoji-list {
+  flex-flow: row wrap;
+}
+
+.emoji-list::after {
+  content: "";
+  flex: auto;
+}
+
+.emoji {
+  width: 140px;
+  cursor: pointer;
+}
+
+.emoji-text {
+  font-family: 'Noto Color Emoji';
+  font-size: 42px;
+}
+
+.copied {
+  padding: 2px 5px;
+  font-weight: bold;
+  background: #DFD;
+  color: #363;
+  border: 1px solid #363;
+  border-radius: 3px;
+  position: absolute;
+  transition-property: top opacity;
+  transition-duration: 800ms;
+  transition-delay: 400ms;
+  transition-timing-function: ease-out;
+}
